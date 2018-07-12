@@ -14,16 +14,16 @@ public class Movie {
 	private String genre;
 	
 	@NotNull
-	private int duration;
+	private double duration;
 	
 	@NotNull
-	private int restriction;
+	private String restriction;
 	
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long movieId;
 
-	public Movie(@NotNull String title, @NotNull String genre, @NotNull int duration, @NotNull int restriction) {
+	public Movie(@NotNull String title, @NotNull String genre, @NotNull double duration, @NotNull String restriction) {
 		super();
 		this.title = title;
 		this.genre = genre;
@@ -47,24 +47,29 @@ public class Movie {
 		this.genre = genre;
 	}
 
-	public int getDuration() {
+	public double getDuration() {
 		return duration;
 	}
 
-	public void setDuration(int duration) {
+	public void setDuration(double duration) {
 		this.duration = duration;
 	}
 
-	public int getRestriction() {
+	public String getRestriction() {
 		return restriction;
 	}
 
-	public void setRestriction(int restriction) {
+	public void setRestriction(String restriction) {
 		this.restriction = restriction;
 	}
 
 	public Long getMovieId() {
 		return movieId;
 	}
-
+	
+	public enum movieGenre {HORROR, COMEDY, CRIME, DRAMA, FANTASY, THRILLER, ANIMATION}
+	
+	public enum movieRestriction {G, PG, PG13, R, NC17}
+	
 }
+
