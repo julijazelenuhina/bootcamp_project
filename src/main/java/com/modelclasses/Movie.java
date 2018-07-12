@@ -4,6 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 public class Movie {
 	
@@ -14,6 +15,7 @@ public class Movie {
 	private String genre;
 	
 	@NotNull
+	@Positive
 	private double duration;
 	
 	@NotNull
@@ -44,6 +46,7 @@ public class Movie {
 	}
 
 	public void setGenre(String genre) {
+		
 		this.genre = genre;
 	}
 
